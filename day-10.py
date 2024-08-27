@@ -25,13 +25,15 @@ def calculator():
         answer = operations[operation_symbol](num1, num2)
         print(f"{num1} {operation_symbol} {num2} = {answer}")
 
-        choice = input(f"Type 'y' to continue calculating with {answer}, or type 'n' to stop: ")
+        choice = input(f"Type 'y' to continue calculating with {answer}, or type 'n' to stop, or type 'q' to quit: ")
 
         if choice == "y":
             num1 = answer
-        else:
+        elif choice == "n":
             should_accumulate = False
             print("\n" * 20)
+        else:
+            exit()
             calculator()
 
 calculator()
